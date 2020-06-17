@@ -28,38 +28,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Order"
-              examples:
-                response:
-                  value:
-                    {
-                      "id": "1",
-                      "name": "James Jones",
-                      "address": "123 W. Division St.",
-                      "address2": "Apt 20E",
-                      "city": "Calexico",
-                      "zipcode": "92231",
-                      "pizzas":[
-                        {
-                          "description": "Large, all pepperoni, mushroom. Half onion",
-                          "size": "L",
-                          "toppings": [
-                            {"side": "B", "code": "P"},
-                            {"side": "B", "code": "M"},
-                            {"side": "R", "code": "O"},
-                            {"side": "R", "code": "S"}
-                        ]                        
-                        },
-                        {
-                          "description": "Small, all mushroom and spinach",
-                          "size": "S",
-                          "toppings":[
-                            {"side": "B", "code": "M"},
-                            {"side": "B", "code": "SP"} 
-                          ]                           
-                        }
-                      ]
-                    }          
+                $ref: "#/components/schemas/Order"         
       description: "Fetch an order"
       parameters:
         - schema:
