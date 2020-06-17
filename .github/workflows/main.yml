@@ -1,0 +1,20 @@
+on: [push]
+
+jobs:
+  deploy_to_clouds:
+    runs-on: self-hosted
+    name: Portal Deploy
+    steps:        
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Kong Deploy Order API
+      uses: ./.github/actions/portal-deploy-action
+      with: 
+        kong-config-type: kong-declarative-config
+        external-service: pizza-order-service
+        external-service-host: mockbin.org
+        openapi-spec: orders.yaml
+    - name: Deploy Dev Portal
+      run: |        
+        portal deploy default
+      

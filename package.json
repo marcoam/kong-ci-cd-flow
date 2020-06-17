@@ -1,0 +1,25 @@
+{
+  "name": "gitops-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kong/gitops-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kong/gitops-demo/issues"
+  },
+  "homepage": "https://github.com/Kong/gitops-demo#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^2.2.0",
+    "openapi-2-kong": "^2.2.4"
+  },
+  "description": ""
+}

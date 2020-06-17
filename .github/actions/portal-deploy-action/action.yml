@@ -1,0 +1,39 @@
+name: 'Kong OpenAPI Deployment'
+description: 'Generates Kong configuration from OpenAPI specification and deploys it.'
+inputs:
+  openapi-spec:  # id of input
+    description: 'OpenAPI specification file'    
+    required: false
+    default: 'orders.yaml'
+  openapi-spec-format:
+    description: 'valid values are YAML or JSON'
+    required: false
+    default: 'YAML'
+  kong-config-type:
+    description: 'The type of Kong configuration to generate'
+    required: false
+    default: 'kong-for-kubernetes'
+  k8s-namespace:
+    description: 'Kubernetes namespace to deploy into'
+    required: false
+    default: 'kong'
+  uid:
+    description: 'System user id that will run processes'
+    required: false
+    default: 501
+  gid:
+    description: 'System group id that will run processes'
+    required: false
+    default: 20
+  external-service:
+    description: 'Name of external service to be created. Do not create one if this input is missing'
+    required: false
+  external-service-host:
+    description: 'Host of external service to be created. Required is external-service is used.'
+    required: false    
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'index.js'
